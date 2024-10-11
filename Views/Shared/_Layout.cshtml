@@ -10,9 +10,11 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light navbar-custom">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Categories</a>
+                <a class="navbar-brand" href="/" style="display: inline-block;">
+                    <img src="~/images/logo.png" alt="Logo" style="height: 40px; width: auto;" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,13 +27,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Categories" asp-action="Index">Categories List</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Categories" asp-action="Create">Create Category</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-controller="Categories" asp-action="Index">Categories List</a>
+                                </li>
+                            </ul>
                         </li>
+                    </ul>
+                    <ul class="nav navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Categories" asp-action="Create">Create Category</a>
+                            <a class="btn btn-primary" href="/Account/Login">Login</a>
                         </li>
                     </ul>
                 </div>
